@@ -31,21 +31,3 @@ class UsersForm(forms.Form):
             self.errors['image'] = self.error_class(["Image link cannot be empty"])
 
         return self.cleaned_data
-""" 
-    first_name = forms.CharField(label="First Name:", max_length=100)
-    last_name = forms.CharField(label="Last Name:", max_length=100)
-    CHOICES = (
-        ('female', "Female"),
-        ('male', "Male")
-    )
-    gender = forms.ChoiceField(widget=forms.RadioSelect(renderer=HorizontalRadioRenderer), choices = CHOICES)
-    image = forms.CharField(label='Image Path:', max_length=100)
-    CHOICES_ = (
-        ('basketball', "Basketball"),
-        ('football', "Football"),
-        ('baseball', "Baseball"),
-        ('cricket', "Cricket"),
-        ('hockey', "Hockey")
-    )
-    sport = forms.ChoiceField(widget=forms.Select, choices = CHOICES_) """
-    
