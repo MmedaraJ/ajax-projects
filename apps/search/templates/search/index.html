@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        {%load static%}
+        <link rel="stylesheet" type="text/css" href="{% static 'search/css/index.css' %}">
+        <script type="text/javascript" src="{% static 'search/js/index.js' %}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h5><u>Create a new user</u></h5>
+            <div class="form">
+                <form action="{% url 'search:create' %}" method="post" id="create_form">
+                    <div class="row">
+                        {% csrf_token %}
+                        <!-- {{form}} -->
+                        {% for field in form %}
+                            <div class="field form-group col-12">
+                                <label class="col-1">{{ field.label }}</label>
+                                {{ field }}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary col-1 align-self-end">Create</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form">
+                <form action="/" method="post" id="fetch_form">
+                    <p>Use Ajax to fetch <input type="number" name="records" id="records"> records (with the most recent showing up first).</p>
+                </form>
+            </div>
+            <div class="placeholder">
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+#placeholder{
+    display: flex;
+}
+
+.posts{
+    flex: 1;
+}

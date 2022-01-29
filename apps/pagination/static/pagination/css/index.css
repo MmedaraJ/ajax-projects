@@ -1,0 +1,7 @@
+.form{
+    display: flex;
+}
+
+.form-group{
+    flex: 1;
+}
